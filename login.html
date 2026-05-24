@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Вход | ServerHost</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="auth-page"><div class="auth-container"><button class="back-button auth-back" onclick="window.location.href='index.html'"><i class="fas fa-arrow-left"></i> На главную</button><div class="logo"><i class="fas fa-cloud-upload-alt"></i><span>Server<span class="accent">Host</span></span></div><h2>Войти в аккаунт</h2><form id="loginForm"><input type="email" id="loginEmail" placeholder="Email" required><input type="password" id="loginPassword" placeholder="Пароль" required><button type="submit" class="btn btn-primary full-width">Войти</button><p id="loginError" class="error-msg"></p></form><p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p><a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> На главную</a></div></div>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', (e) => { e.preventDefault(); const email = document.getElementById('loginEmail').value; const pwd = document.getElementById('loginPassword').value; const errorSpan = document.getElementById('loginError'); const users = JSON.parse(localStorage.getItem('users') || '[]'); const user = users.find(u => u.email === email && u.password === pwd); if(user) { sessionStorage.setItem('currentUser', JSON.stringify({ id: user.id, name: user.name, email: user.email })); window.location.href = 'index.html'; } else { errorSpan.innerText = 'Неверный email или пароль'; } });
+  </script>
+</body>
+</html>

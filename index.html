@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServerHost | Аренда серверов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container header-flex">
+      <div class="logo">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <span>Server<span class="accent">Host</span></span>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link active">Главная</a></li>
+          <li><a href="servers.html" class="nav-link">Веб-серверы</a></li>
+          <li><a href="rentals.html" class="nav-link">Мои аренды</a></li>
+          <li><a href="contact.html" class="nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons" id="authButtons">
+        <a href="login.html" class="btn-outline-small">Вход</a>
+        <a href="register.html" class="btn-primary-small">Регистрация</a>
+      </div>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <span id="userName"></span>
+        <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+      </div>
+      <div class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Аренда мощных <span class="gradient-text">веб-серверов</span> для ваших проектов</h1>
+          <p>Мгновенное развертывание, enterprise-надёжность.</p>
+          <div class="hero-buttons">
+            <a href="servers.html" class="btn btn-primary"><i class="fas fa-server"></i> Выбрать сервер</a>
+            <a href="rentals.html" class="btn btn-outline"><i class="fas fa-list"></i> Мои аренды</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://placehold.co/600x400/0a0f2a/4f46e5?text=+Cloud+Hosting&font=montserrat" alt="Cloud hosting">
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Почему ServerHost</h2>
+          <p>Высокая производительность, полный контроль и поддержка 24/7</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card"><i class="fas fa-rocket"></i><h3>Молниеносная скорость</h3><p>NVMe, выделенные ядра, сеть 10 Гбит/с.</p></div>
+          <div class="feature-card"><i class="fas fa-shield-alt"></i><h3>Безопасность</h3><p>Автобекапы, DDoS-защита, изолированные окружения.</p></div>
+          
+          <div class="feature-card"><i class="fas fa-chart-line"></i><h3>Масштабирование</h3><p>Легко увеличивайте ресурсы в один клик.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-plans">
+      <div class="container">
+        <div class="section-header"><h2>Популярные тарифы серверов</h2><p>Гибкие конфигурации для любых задач</p></div>
+        <div class="plans-preview">
+          <div class="plan-card"><div class="plan-badge">Старт</div><h3>Веб-Старт</h3><div class="price">$19 <span>/мес</span></div><ul><li><i class="fas fa-microchip"></i> 2 vCPU</li><li><i class="fas fa-memory"></i> 4 ГБ RAM</li><li><i class="fas fa-hdd"></i> 80 ГБ NVMe</li><li><i class="fas fa-globe"></i> 1 ТБ трафик</li></ul><a href="servers.html" class="btn btn-secondary">Арендовать →</a></div>
+          <div class="plan-card featured"><div class="plan-badge">Хит продаж</div><h3>Бизнес ПРО</h3><div class="price">$49 <span>/мес</span></div><ul><li><i class="fas fa-microchip"></i> 8 vCPU</li><li><i class="fas fa-memory"></i> 16 ГБ RAM</li><li><i class="fas fa-hdd"></i> 240 ГБ NVMe</li><li><i class="fas fa-globe"></i> 5 ТБ трафик</li></ul><a href="servers.html" class="btn btn-primary">Арендовать →</a></div>
+          <div class="plan-card"><div class="plan-badge">Эксперт</div><h3>Энтерпрайз</h3><div class="price">$99 <span>/мес</span></div><ul><li><i class="fas fa-microchip"></i> 16 vCPU</li><li><i class="fas fa-memory"></i> 32 ГБ RAM</li><li><i class="fas fa-hdd"></i> 500 ГБ NVMe</li><li><i class="fas fa-globe"></i> 10 ТБ трафик</li></ul><a href="servers.html" class="btn btn-secondary">Арендовать →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Готовы начать?</h2>
+        <h2>Подключите сервер за 5 минут.</h2>
+        <a href="register.html" class="btn btn-light"><i class="fas fa-user-plus"></i> Создать аккаунт</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-about"><div class="logo"><i class="fas fa-cloud-upload-alt"></i> ServerHost</div><p>Надёжная аренда серверов.</p><div class="socials"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i class="fab fa-telegram"></i></a><a href=https://www.youtube.com><i class="fab fa-x-twitter"></i></a></div></div>
+      <div class="footer-links"><h4>Продукты</h4><ul><li><a href="servers.html">Веб-серверы</a></li><li><a href="rentals.html">Мои аренды</a></li></ul></div>
+      <div class="footer-links"><h4>Ресурсы</h4><ul><li><a href="#">Документация</a></li><li><a href="#">API</a></li><li><a href="contact.html">Поддержка</a></li></ul></div>
+      <div class="footer-contact"><h4>Контакты</h4><p><i class="fas fa-envelope"></i> hello@serverhost.com</p><p><i class="fas fa-phone-alt"></i> +7 (495) 123-45-67</p></div>
+    </div>
+    
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

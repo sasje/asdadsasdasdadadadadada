@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServerHost | Мои аренды</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header">...</header>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <button class="back-button" onclick="history.back()"><i class="fas fa-arrow-left"></i> Назад</button>
+        <h1>Мои аренды</h1>
+        <p>Управление арендованными серверами</p>
+      </div>
+    </section>
+    <section class="rentals-section">
+      <div class="container">
+        <div id="rentalsList" class="rentals-list"></div>
+        <div id="emptyRentals" class="empty-rentals" style="display:none;">
+          <i class="fas fa-server"></i>
+          <p>У вас пока нет активных аренд.</p>
+          <a href="servers.html" class="btn btn-primary">Перейти к серверам</a>
+        </div>
+
+        <!-- Блок управления данными -->
+        <div class="data-management">
+          <h3><i class="fas fa-folder-open"></i> Работа с данными (ваша папка)</h3>
+          <div class="data-buttons">
+            <button class="btn btn-secondary" onclick="exportAllData()"><i class="fas fa-download"></i> Экспорт (сохранить в папку)</button>
+            <label class="btn btn-outline" style="cursor:pointer;">
+              <i class="fas fa-upload"></i> Импорт из файла
+              <input type="file" id="importFileInput" accept=".json" style="display:none;" onchange="importAllData(this)">
+            </label>
+            <button class="btn btn-outline" style="border-color:#f43f5e; color:#f43f5e;" onclick="resetAllData()"><i class="fas fa-trash-alt"></i> Сбросить всё</button>
+          </div>
+          <p class="data-hint">Экспорт сохраняет всех пользователей и аренды серверов в JSON-файл.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer">...</footer>
+  <script src="script.js"></script>
+  <script>renderUserRentals();</script>
+</body>
+</html>
