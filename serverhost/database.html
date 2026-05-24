@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServerHost | Базы данных</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header">...</header>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <button class="back-button" onclick="history.back()"><i class="fas fa-arrow-left"></i> Назад</button>
+        <h1>Управляемые базы данных</h1>
+        <p>MySQL, PostgreSQL, Redis — автоматическое резервное копирование</p>
+      </div>
+    </section>
+    <section class="plans-grid-section"><div class="container"><div class="plans-grid" id="databasesList"></div></div></section>
+  </main>
+  <footer class="main-footer">...</footer>
+  <script src="script.js"></script>
+  <script>
+    const databasesData = [
+      { id: "db1", name: "MySQL Базовая", engine: "MySQL 8.0", storage: "20 ГБ", connections: "100", price: 15, badge: "Начальный" },
+      { id: "db2", name: "PostgreSQL Про", engine: "PostgreSQL 15", storage: "50 ГБ", connections: "300", price: 35, badge: "Популярный", featured: true },
+      { id: "db3", name: "Redis Кэш", engine: "Redis 7.0", storage: "10 ГБ", connections: "500", price: 25, badge: "Высокая скорость" },
+      { id: "db4", name: "MySQL Корпоративный", engine: "MySQL 8.0", storage: "100 ГБ", connections: "1000", price: 65, badge: "Для бизнеса" }
+    ];
+    window.productsData = { databases: databasesData, servers: [] };
+    window.currentProductType = "database";
+    renderProductsList(databasesData, "databasesList", "database");
+  </script>
+</body>
+</html>

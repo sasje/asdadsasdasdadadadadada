@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServerHost | Веб-серверы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container header-flex">
+      <div class="logo"><i class="fas fa-cloud-upload-alt"></i><span>Server<span class="accent">Host</span></span></div>
+      <nav class="main-nav"><ul><li><a href="index.html" class="nav-link">Главная</a></li><li><a href="servers.html" class="nav-link active">Веб-серверы</a></li><li><a href="rentals.html" class="nav-link">Мои аренды</a></li><li><a href="contact.html" class="nav-link">Контакты</a></li></ul></nav>
+      <div class="auth-buttons" id="authButtons"><a href="login.html" class="btn-outline-small">Вход</a><a href="register.html" class="btn-primary-small">Регистрация</a></div>
+      <div class="user-menu" id="userMenu" style="display: none;"><span id="userName"></span><button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Выйти</button></div>
+      <div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <button class="back-button" onclick="history.back()"><i class="fas fa-arrow-left"></i> Назад</button>
+        <h1>Веб-серверы</h1>
+        <p>Выберите оптимальную конфигурацию для вашего проекта</p>
+      </div>
+    </section>
+    <section class="plans-grid-section">
+      <div class="container">
+        <div class="plans-grid" id="serversList"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer">...</footer>
+  <script src="script.js"></script>
+  <script>
+    const serversData = [
+      { id: "s1", name: "Веб-Старт", cpu: "2 vCPU", ram: "4 ГБ", disk: "80 ГБ NVMe", traffic: "1 ТБ", price: 19, badge: "Старт" },
+      { id: "s2", name: "Бизнес ПРО", cpu: "8 vCPU", ram: "16 ГБ", disk: "240 ГБ NVMe", traffic: "5 ТБ", price: 49, badge: "Хит продаж", featured: true },
+      { id: "s3", name: "Энтерпрайз", cpu: "16 vCPU", ram: "32 ГБ", disk: "500 ГБ NVMe", traffic: "10 ТБ", price: 99, badge: "Эксперт" },
+      { id: "s4", name: "Ультра SSD", cpu: "4 vCPU", ram: "8 ГБ", disk: "160 ГБ NVMe", traffic: "2 ТБ", price: 29, badge: "Популярный" },
+      { id: "s5", name: "Разработчик", cpu: "1 vCPU", ram: "2 ГБ", disk: "40 ГБ SSD", traffic: "500 ГБ", price: 9, badge: "Для старта" }
+    ];
+    renderProductsList(serversData, "serversList", "server");
+  </script>
+</body>
+</html>
